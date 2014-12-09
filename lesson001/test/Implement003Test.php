@@ -25,8 +25,6 @@ class Implement003Test extends \PHPUnit_Framework_TestCase {
       ->willHit(Hitting::AIR)
       ->willHit(Hitting::LEFT_HAND)
       ->willHit(Hitting::HEAD);
-    $this->assertFalse($this->fire->isDeadly());
-    $this->assertFalse($this->fire->isDeadly());
     $this->assertTrue($this->fire->isDeadly());
   }
 
