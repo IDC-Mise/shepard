@@ -1,0 +1,4 @@
+temp/*
+temp-testing/*
+vendor/*
+!vendor/others
