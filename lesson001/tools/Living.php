@@ -2,10 +2,8 @@
 
 namespace Lesson001;
 
-interface Soldier {
-  /** @return boolean */
+interface Living {
   public function isAlive();
-  /** @return null */
   public function dieNow();
 }
 

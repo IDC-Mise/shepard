@@ -10,12 +10,16 @@ class Implement002Test extends \PHPUnit_Framework_TestCase {
   public function setUp() {
     $this->soldier = new SoldierImpl();
   }
-  
+
   public function test01() {
+    $this->assertInstanceOf('Lesson001\Living', $this->soldier);
+  }
+  
+  public function test02() {
     $this->assertTrue($this->soldier->isAlive());
   }
 
-  public function test02() {
+  public function test03() {
     $this->soldier->dieNow();
     $this->assertFalse($this->soldier->isAlive());
   }

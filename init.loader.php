@@ -7,5 +7,6 @@ $loader = new Nette\Loaders\RobotLoader;
 $loader->addDirectory(__DIR__ . '/lesson001');
 // And set caching to the 'temp' directory on the disc
 $loader->setCacheStorage(new Nette\Caching\Storages\FileStorage(__DIR__ .'/temp'));
+#$loader->autoRebuild = true;
 $loader->register(); // Run the RobotLoader
 
