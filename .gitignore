@@ -1,4 +1,4 @@
-temp/*
-temp-testing/*
+!.gitignore
+
 vendor/*
 !vendor/others
