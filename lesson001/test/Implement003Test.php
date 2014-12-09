@@ -15,11 +15,15 @@ class Implement003Test extends \PHPUnit_Framework_TestCase {
     $this->assertInstanceOf('Lesson001\Killing', $this->fire);
   }
 
-  /** @expectedException Lesson001\LogicException */
+  /**
+   * @after test01
+   * @expectedException Lesson001\LogicException
+   */
   public function test02() {
     $this->fire->isDeadly();
   }
 
+  /** @after test02 */
   public function test03() {
     $this->fire
       ->willHit(Hitting::AIR)

@@ -9,5 +9,10 @@ class Implement001Test extends \PHPUnit_Framework_TestCase {
   public function test01() {
     $this->assertTrue(true);
   }
+
+  /** @after test01 */
+  public function test02() {
+    $this->assertTrue(class_exists('Lesson001\SoldierImpl'));
+  }
 }
 

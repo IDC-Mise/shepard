@@ -18,18 +18,21 @@ class Implement004Test extends \PHPUnit_Framework_TestCase {
     $this->assertInstanceOf('Lesson001\ContinuousFire', $this->fire);
   }
 
+  /** @after test01 */
   public function test02() {
     $this->fire->willHit(Hitting::AIR);
     $this->soldier->hitBy($this->fire);
     $this->assertTrue($this->soldier->isAlive());
   }
 
+  /** @after test02 */
   public function test03() {
     $this->fire->willHit(Hitting::HEAD);
     $this->soldier->hitBy($this->fire);
     $this->assertFalse($this->soldier->isAlive());
   }
 
+  /** @after test03 */
   public function test04() {
     $this->fire
       ->willHit(Hitting::AIR)
@@ -41,6 +44,7 @@ class Implement004Test extends \PHPUnit_Framework_TestCase {
     $this->assertSame(2, $this->fire->shotsFired());
   }
 
+  /** @after test04 */
   public function test05() {
     $fire = $this->getMock('Lesson001\FireImpl', ['isDeadlyNow']);
     $fire->expects($this->atLeastOnce())
