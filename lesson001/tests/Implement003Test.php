@@ -8,6 +8,9 @@ class Implement003Test extends \PHPUnit_Framework_TestCase {
   private $fire;
 
   public function setUp() {
+    if (!class_exists('Lesson001\FireImpl')) {
+      $this->markTestSkipped();
+    }
     $this->fire = new FireImpl();
   }
 
@@ -16,14 +19,14 @@ class Implement003Test extends \PHPUnit_Framework_TestCase {
   }
 
   /**
-   * @after test01
+   * @depends test01
    * @expectedException Lesson001\LogicException
    */
   public function test02() {
     $this->fire->isDeadly();
   }
 
-  /** @after test02 */
+  /** @depends test02 */
   public function test03() {
     $this->fire
       ->willHit(Hitting::AIR)
